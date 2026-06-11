@@ -168,7 +168,7 @@ export const menuController = {
                 <article class="menu-card" data-id="${pizza.id}">
                     <header class="card-media">
                         <img
-                            src="../${pizza.imgUrl}"
+                            src="../../${pizza.imgUrl}"
                             class="card-img"
                             alt="Foto de ${pizza.name}"
                             loading="lazy"
