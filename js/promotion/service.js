@@ -1,6 +1,7 @@
 export const service = {
     getPromotions: () => {
-        return fetch("../database/promotions.json", {
+        //return fetch("../database/promotions.json", {
+        return fetch("database/promotions.json", {
             method: "GET",
             headers: {
               "Content-Type": "application/json",
