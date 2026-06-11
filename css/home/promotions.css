@@ -1,0 +1,304 @@
+/**********************/
+/* PROMOTIONS SECTION */
+/**********************/
+/* ===== Grid ===== */
+.promotions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+/* ===== Empty State ===== */
+.promotions-empty {
+    grid-column: 1 / -1;
+
+    background: var(--color-card-bg);
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border);
+    border-radius: 0.625rem;
+
+    padding: 1.5rem;
+}
+
+.promotions-empty strong {
+    color: var(--color-text-primary);
+}
+
+/* ===== Promo Card ===== */
+.promotion-card {
+    position: relative;
+    overflow: hidden;
+
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 0.625rem;
+    box-shadow: var(--color-card-shadow);
+
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.promotion-card:hover {
+    box-shadow: var(--color-card-shadow-hover);
+
+    transform: translateY(-3px);
+}
+
+/* media */
+.promotion-media {
+    position: relative;
+
+    height: 210px;
+    overflow: hidden;
+}
+
+.promotion-media img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transform: scale(1.02);
+    filter: saturate(1.05) contrast(1.02);
+}
+
+/* overlay moderno para legibilidad */
+.promotion-media::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.55) 100%);
+}
+
+/* ===== Badge ===== */
+.promotion-badge {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04rem;
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    border-radius: 999px;
+    border: 1px solid transparent;
+    backdrop-filter: blur(8px);
+
+    padding: 0.5rem 0.625rem;
+
+    z-index: 2;
+}
+
+.promotion-badge--default {
+    background: rgba(255, 255, 255, 0.14);
+    color: rgba(255, 255, 255, 0.95);
+    border-color: rgba(255, 255, 255, 0.22);
+}
+
+.promotion-badge--combo {
+    background: rgba(29, 53, 87, 0.80);
+    color: #ffffff;
+    border-color: rgba(69, 123, 157, 0.45);
+}
+
+.promotion-badge--offer {
+    background: rgba(230, 57, 70, 0.82);
+    color: #ffffff;
+    border-color: rgba(255, 107, 107, 0.4);
+}
+
+.promotion-badge--special {
+    background: rgba(180, 117, 23, 0.85);
+    color: #ffffff;
+    border-color: rgba(239, 159, 39, 0.45);
+}
+
+.promotion-badge--veggie {
+    background: rgba(34, 120, 70, 0.82);
+    color: #ffffff;
+    border-color: rgba(34, 139, 87, 0.4);
+}
+
+.promotion-badge--cheese {
+    background: rgba(160, 90, 20, 0.82);
+    color: #ffffff;
+    border-color: rgba(210, 140, 50, 0.4);
+}
+
+/* ===== Body ===== */
+.promotion-body {
+    padding: 1rem;
+}
+
+.promotion-title {
+    font-size: 1.4rem;
+    font-weight: 900;
+    line-height: 1.3;
+
+    color: var(--color-text-primary);
+}
+
+.promotion-description {
+    font-size: 0.925rem;
+    line-height: 1.5;
+
+    color: var(--color-text-subtitle);
+
+    margin-top: 0.5rem;
+}
+
+/* actions */
+.promotion-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.625rem;
+
+    margin-top: 1.25rem;
+}
+
+.promotion-price {
+    font-size: 1.025rem;
+    font-weight: 800;
+
+    color: var(--color-text-primary);
+}
+
+/* CTA (coherente con tu sistema) */
+.promotion-btn {
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.04rem;
+    text-transform: uppercase;
+
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+    border: 1px solid var(--btn-primary-border);
+    border-radius: 0.3125rem;
+
+    padding: 0.625rem 1rem;
+
+    transition: background-color .18s ease, transform .18s ease;
+}
+
+.promotion-btn:hover {
+    background-color: var(--btn-primary-bg-hover);
+
+    transform: translateY(-1px);
+}
+
+.promotion-btn:active {
+    transform: translateY(0);
+}
+
+.promotion-btn:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 3px;
+}
+
+.promotions-more {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem;
+}
+
+/* ====== RESPONSIVE ====== */
+@media screen and (max-width: 1024px) {
+    .promotion-title {
+        font-size: 1.4rem;
+    }
+
+    .promotion-description {
+        font-size: 0.9rem;
+    }
+
+    .promotion-price {
+        font-size: 1.1rem;
+    }
+
+    .promotion-btn {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .promotions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .promotion-title {
+        font-size: 1.35rem;
+    }
+
+    .promotion-description {
+        font-size: 0.875rem;
+    }
+
+    .promotion-price {
+        font-size: 1.075rem;
+    }
+
+    .promotion-btn {
+        font-size: 0.775rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .promotion-title {
+        font-size: 1.3rem;
+    }
+
+    .promotion-description {
+        font-size: 0.85rem;
+    }
+
+    .promotion-price {
+        font-size: 1.05rem;
+    }
+
+    .promotion-btn {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .promotions-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .promotion-title {
+        font-size: 1.25rem;
+    }
+
+    .promotion-description {
+        font-size: 0.825rem;
+    }
+
+    .promotion-price {
+        font-size: 1.025rem;
+    }
+
+    .promotion-btn {
+        font-size: 0.725rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .promotion-title {
+        font-size: 1.2rem;
+    }
+
+    .promotion-description {
+        font-size: 0.8rem;
+    }
+
+    .promotion-price {
+        font-size: 1rem;
+    }
+
+    .promotion-btn {
+        font-size: 0.7rem;
+    }
+}

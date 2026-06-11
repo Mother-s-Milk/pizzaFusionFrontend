@@ -1,0 +1,143 @@
+/* ======================== */
+/* MENU PAGE                */
+/* ======================== */
+
+/* ===================== */
+/* VARIABLES LOCALES      */
+/* ===================== */
+.menu-page {
+    --menu-sidebar-w: 240px;
+    --menu-sidebar-top: 80px;
+    /* altura del topbar */
+
+    --menu-filter-active-bg: var(--btn-primary-bg);
+    --menu-filter-active-text: var(--btn-primary-text);
+
+    --menu-card-radius: 0.5rem;
+    --menu-card-img-h: 200px;
+
+    --menu-badge-glass-bg: rgba(255, 255, 255, 0.18);
+    --menu-badge-glass-border: rgba(255, 255, 255, 0.22);
+
+    --menu-pagination-active-bg: var(--color-accent);
+    --menu-pagination-active-text: #ffffff;
+    --menu-pagination-active-shadow: 0 8px 20px rgba(230, 57, 70, 0.22);
+
+    --menu-toast-bg: var(--color-accent);
+    --menu-toast-text: #ffffff;
+    --menu-toast-shadow: 0 8px 24px rgba(230, 57, 70, 0.35);
+}
+
+/* ===================== */
+/* LAYOUT PRINCIPAL       */
+/* ===================== */
+.menu {
+    display: grid;
+    grid-template-columns: var(--menu-sidebar-w) 1fr;
+    align-items: start;
+    gap: 1rem;
+}
+
+/* ===================== */
+/* CHIPS MOBILE (scroll) */
+/* ===================== */
+.menu-mobile-filters {
+    display: none;
+
+    overflow-x: auto;
+    gap: 0.5rem;
+
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+
+    padding: 0.875rem 1.25rem;
+
+    scrollbar-width: none;
+}
+
+.menu-mobile-filters::-webkit-scrollbar {
+    display: none;
+}
+
+.menu-chip-btn {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+
+    background: var(--color-card-bg);
+    color: var(--color-text-subtitle);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+
+    padding: 0.4rem 0.9rem;
+
+    flex-shrink: 0;
+
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.menu-chip-btn.active {
+    background: var(--color-accent);
+    color: #ffffff;
+    border-color: var(--color-accent);
+}
+
+/* ===================== */
+/* TOAST NOTIFICACIÓN    */
+/* ===================== */
+.toast-notification {
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translate(-50%, -1rem);
+
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    background: var(--color-card-bg);
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-card-border);
+    border-radius: 0.625rem;
+    box-shadow: var(--color-card-shadow);
+
+    padding: 1rem;
+
+    z-index: 1100;
+
+    opacity: 0;
+    
+    pointer-events: none;
+
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.toast-notification.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+    pointer-events: auto;
+}
+
+/* ===================== */
+/* RESPONSIVE            */
+/* ===================== */
+@media screen and (max-width: 1024px) {
+    .menu-page {
+        --menu-sidebar-w: 200px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .menu {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-mobile-filters {
+        display: flex;
+    }
+}

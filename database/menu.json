@@ -1,0 +1,140 @@
+{
+    "pizzas": [
+        {
+            "id": 1,
+            "name": "Muzzarella Clásica",
+            "description": "Masa artesanal, salsa casera y muzzarella gratinada.",
+            "price": 4500,
+            "imgUrl": "../img/menu/pizza-card.avif",
+            "badge": "clasica",
+            "ingredientes": ["Salsa de tomate", "Muzzarella", "Orégano"]
+        },
+        {
+            "id": 2,
+            "name": "Napolitana",
+            "description": "Clásica con tomate fresco, ajo y un toque de orégano.",
+            "price": 5200,
+            "imgUrl": "../img/menu/pizza-card.avif",
+            "badge": "clasica",
+            "ingredientes": ["Salsa de tomate", "Muzzarella", "Tomate", "Ajo", "Orégano"]
+        },
+        {
+            "id": 3,
+            "name": "Fugazza",
+            "description": "Cebolla caramelizada sobre masa crocante y aromática.",
+            "price": 4800,
+            "imgUrl": "../img/menu/pizza-card.avif",
+            "badge": "blanca",
+            "ingredientes": ["Cebolla", "Aceite de oliva", "Orégano"]
+        },
+        {
+            "id": 4,
+            "name": "Fugazzeta",
+            "description": "Rellena de muzzarella y cubierta con cebolla dorada.",
+            "price": 5500,
+            "imgUrl": "../img/menu/pizza-card.avif",
+            "badge": "blanca",
+            "ingredientes": ["Cebolla", "Muzzarella", "Aceite de oliva"]
+        },
+        {
+            "id": 5,
+            "name": "Pepperoni",
+            "description": "Rodajas de pepperoni bien crocantes sobre muzza fundida.",
+            "price": 5800,
+            "imgUrl": "../img/menu/pizza-card.avif",
+            "badge": "carnivora",
+            "ingredientes": ["Salsa de tomate", "Muzzarella", "Pepperoni"]
+        },
+        {
+            "id": 6,
+            "name": "Jamón y Morrones",
+            "description": "Jamón suave y morrones asados sobre base tradicional.",
+            "price": 5600,
+            "imgUrl": "../img/menu/pizza-card.avif",
+            "badge": "carnivora",
+            "ingredientes": ["Salsa de tomate", "Muzzarella", "Jamón", "Morrón"]
+        },
+        {
+            "id": 7,
+            "name": "Calabresa",
+            "description": "Salame intenso con un toque picante de ají molido.",
+            "price": 6000,
+            "imgUrl": "../img/menu/pizza-card.avif",
+            "badge": "carnivora",
+            "ingredientes": ["Salsa de tomate", "Muzzarella", "Salame", "Ají molido"]
+        },
+        {
+            "id": 8,
+            "name": "Cuatro Quesos",
+            "description": "Mezcla equilibrada de quesos intensos y cremosos.",
+            "price": 6200,
+            "imgUrl": "../img/menu/pizza-card.avif",
+            "badge": "blanca",
+            "ingredientes": ["Muzzarella", "Queso azul", "Parmesano", "Provolone"]
+        },
+        {
+            "id": 9,
+            "name": "Veggie Mediterránea",
+            "description": "Vegetales frescos con un perfil suave y aromático.",
+            "price": 6000,
+            "imgUrl": "../img/menu/pizza-card.avif",
+            "badge": "veggie",
+            "ingredientes": ["Salsa de tomate", "Muzzarella", "Cebolla", "Morrón", "Aceitunas", "Rúcula"]
+        },
+        {
+            "id": 10,
+            "name": "Espinaca & Queso",
+            "description": "Espinaca salteada con queso cremoso y suave.",
+            "price": 5900,
+            "imgUrl": "../img/menu/pizza-card.avif",
+            "badge": "veggie",
+            "ingredientes": ["Espinaca", "Muzzarella", "Queso crema"]
+        },
+        {
+            "id": 11,
+            "name": "Jamón Crudo & Rúcula",
+            "description": "Jamón crudo, rúcula fresca y parmesano en láminas.",
+            "price": 6800,
+            "imgUrl": "../img/menu/pizza-card.avif",
+            "badge": "gourmet",
+            "ingredientes": ["Muzzarella", "Jamón crudo", "Rúcula", "Parmesano"]
+        },
+        {
+            "id": 12,
+            "name": "Provolone & Champiñones",
+            "description": "Queso provolone fundido con champiñones salteados.",
+            "price": 6500,
+            "imgUrl": "../img/menu/pizza-card.avif",
+            "badge": "gourmet",
+            "ingredientes": ["Provolone", "Champiñones", "Aceite de oliva", "Pimienta"]
+        },
+        {
+            "id": 13,
+            "name": "Pollo BBQ",
+            "description": "Pollo grillado con salsa BBQ y cebolla morada.",
+            "price": 6700,
+            "imgUrl": "../img/menu/pizza-card.avif",
+            "badge": "carnivora",
+            "ingredientes": ["Salsa BBQ", "Muzzarella", "Pollo", "Cebolla morada"]
+        },
+        {
+            "id": 14,
+            "name": "Caprese",
+            "description": "Tomate fresco, muzza suave y albahaca aromática.",
+            "price": 6100,
+            "imgUrl": "../img/menu/pizza-card.avif",
+            "badge": "gourmet",
+            "ingredientes": ["Tomate", "Muzzarella fresca", "Albahaca", "Aceite de oliva"]
+        },
+        {
+            "id": 15,
+            "name": "Hawaiana",
+            "description": "Equilibrio perfecto entre dulce y salado.",
+            "price": 6300,
+            "imgUrl": "../img/menu/pizza-card.avif",
+            "badge": "clasica",
+            "ingredientes": ["Salsa de tomate", "Muzzarella", "Jamón", "Ananá"]
+        }
+    ],
+    "totalItems": 15
+}

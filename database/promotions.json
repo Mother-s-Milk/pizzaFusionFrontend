@@ -1,0 +1,55 @@
+{
+    "promotions": [
+        {
+            "id": 1,
+            "title": "Combo Clásico Familiar",
+            "description": "3 pizzas clásicas a elección por un precio especial.",
+            "pizzaIds": [1, 2, 15],
+            "price": 10000,
+            "imgUrl": "../img/promotions/promotion.avif",
+            "badge": "Combo",
+            "active": true
+        },
+        {
+            "id": 2,
+            "title": "Noche Carnívora",
+            "description": "2 pizzas bien cargadas para los amantes de la carne.",
+            "pizzaIds": [5, 6],
+            "price": 9800,
+            "imgUrl": "../img/promotions/promotion.avif",
+            "badge": "Oferta",
+            "active": true
+        },
+        {
+            "id": 3,
+            "title": "Especial Gourmet",
+            "description": "Elegí dos pizzas gourmet con descuento exclusivo.",
+            "pizzaIds": [11, 12, 14],
+            "price": 11500,
+            "imgUrl": "../img/promotions/promotion.avif",
+            "badge": "Especial",
+            "active": true
+        },
+        {
+            "id": 4,
+            "title": "Veggie Lovers",
+            "description": "Combo veggie ideal para compartir sin culpa.",
+            "pizzaIds": [9, 10],
+            "price": 9200,
+            "imgUrl": "../img/promotions/promotion.avif",
+            "badge": "Veggie",
+            "active": true
+        },
+        {
+            "id": 5,
+            "title": "Blancas & Quesos",
+            "description": "2 pizzas blancas bien cremosas a precio promocional.",
+            "pizzaIds": [3, 8],
+            "price": 9000,
+            "imgUrl": "../img/promotions/promotion.avif",
+            "badge": "Quesos",
+            "active": true
+        }
+    ],
+    "totalPromotions": 5
+}

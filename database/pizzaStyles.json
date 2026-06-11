@@ -1,0 +1,49 @@
+{
+    "styles": [
+        {
+            "id": 1,
+            "slug": "clasica",
+            "title": "Clásicas",
+            "subtitle": "Tradición & muzza",
+            "imgUrl": "../img/styles/clasica.avif",
+            "badge": "Más elegidas",
+            "active": true
+        },
+        {
+            "id": 2,
+            "slug": "carnivora",
+            "title": "Carnívoras",
+            "subtitle": "Potentes y cargadas",
+            "imgUrl": "../img/styles/carnivora.avif",
+            "badge": null,
+            "active": true
+        },
+        {
+            "id": 3,
+            "slug": "gourmet",
+            "title": "Gourmet",
+            "subtitle": "Ingredientes premium",
+            "imgUrl": "../img/styles/gourmet.avif",
+            "badge": null,
+            "active": true
+        },
+        {
+            "id": 4,
+            "slug": "blanca",
+            "title": "Blancas",
+            "subtitle": "Cremosas y suaves",
+            "imgUrl": "../img/styles/blanca.avif",
+            "badge": null,
+            "active": true
+        },
+        {
+            "id": 5,
+            "slug": "veggie",
+            "title": "Veggie",
+            "subtitle": "Frescas & vegetales",
+            "imgUrl": "../img/styles/veggie.avif",
+            "badge": null,
+            "active": true
+        }
+    ]
+}

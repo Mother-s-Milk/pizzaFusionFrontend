@@ -1,0 +1,413 @@
+/* ================================================ */
+/* ABOUT-STORY.CSS                                  */
+/* Stepped Story Viewer — reemplaza .about-cards    */
+/* Depende de core.css (variables y utilidades)     */
+/* ================================================ */
+
+/* ── Sección contenedora ── */
+.story-section {
+    position: relative;
+}
+
+/* ── Header de sección ── */
+.story-section__header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* ── Indicador lateral (dots / pill) ── */
+.story-nav {
+    position: absolute;
+    left: 2.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.625rem;
+
+    z-index: 10;
+}
+
+.story-nav__dot {
+    cursor: pointer;
+
+    width: 7px;
+    height: 7px;
+    
+    background-color: var(--color-border-strong);
+    border: none;
+    border-radius: 999px;
+    
+    padding: 0;
+
+    transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+}
+
+.story-nav__dot.is-active {
+    height: 2rem;
+    background-color: var(--color-accent);
+}
+
+.story-nav__dot:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 999px;
+}
+
+/* ── Track (overflow oculto) ── */
+.story-track {
+    position: relative;
+    overflow: hidden;
+    min-height: 420px;
+}
+
+/* ── Slide ── */
+.story-slide {
+    /* Estado inicial: oculto y desplazado */
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: translateY(1.25rem);
+    pointer-events: none;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 3rem;
+
+    padding: 0 0 0 2.5rem;
+
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.story-slide.is-active {
+    position: relative;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Reverse: imagen a la derecha */
+.story-slide--reverse .story-slide__img {
+    order: 2;
+}
+
+.story-slide--reverse .story-slide__text {
+    order: 1;
+}
+
+/* ── Imagen ── */
+.story-slide__img {
+    height: 390px;
+    overflow: hidden;
+
+    border-radius: 0.625rem;
+    box-shadow: var(--color-card-shadow);
+}
+
+.story-slide__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.5s ease;
+}
+
+.story-slide.is-active .story-slide__img img {
+    transform: scale(1);
+}
+
+.story-slide:not(.is-active) .story-slide__img img {
+    transform: scale(1.04);
+}
+
+/* ── Texto con stagger ── */
+.story-slide__text {
+    max-width: 480px;
+}
+
+.story-slide:not(.story-slide--reverse) .story-slide__text {
+    margin-left: auto;
+}
+
+.story-slide--reverse .story-slide__text {
+    margin-right: auto;
+}
+
+/* Stagger: cada elemento sale retrasado */
+.story-slide__eyebrow,
+.story-slide__title,
+.story-slide__body {
+    opacity: 0;
+    transform: translateY(10px);
+    transition-property: opacity, transform;
+    transition-timing-function: ease;
+}
+
+.story-slide__eyebrow {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.25rem;
+    text-transform: uppercase;
+
+    display: block;
+
+    color: var(--color-accent);
+    
+    margin-bottom: 0.625rem;
+    transition-duration: 0.4s;
+    transition-delay: 0.1s;
+}
+
+.story-slide__title {
+    font-size: 2.25rem;
+    font-weight: 900;
+    letter-spacing: 0.04rem;
+    line-height: 1.2;
+
+    color: var(--color-text-primary);
+
+    margin-bottom: 1rem;
+
+    transition-duration: 0.4s;
+    transition-delay: 0.2s;
+}
+
+.story-slide__body {
+    font-size: 0.95rem;
+    line-height: 1.7;
+
+    color: var(--color-text-subtitle);
+
+    transition-duration: 0.4s;
+    transition-delay: 0.3s;
+}
+
+/* Activar stagger cuando el slide está activo */
+.story-slide.is-active .story-slide__eyebrow,
+.story-slide.is-active .story-slide__title,
+.story-slide.is-active .story-slide__body {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ── Footer: progreso + flechas + contador ── */
+.story-footer {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+    padding: 1.5rem 0;
+}
+
+.story-progress {
+    max-width: 300px;
+    height: 3px;
+    overflow: hidden;
+
+    flex: 1;
+    
+    background-color: var(--color-border);
+    border: none;
+    border-radius: 999px;
+}
+
+.story-progress__fill {
+    height: 100%;
+    background-color: var(--color-accent);
+    border-radius: 999px;
+    transition: width 0.4s ease;
+}
+
+/* ARROWS */
+.story-arrows {
+    display: flex;
+    gap: 0.625rem;
+}
+
+.story-arrow {
+    font-size: 1rem;
+
+    width: 2rem;
+    height: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--color-card-bg);
+    color: var(--color-text-primary);
+    border: 1.5px solid var(--color-border-strong);
+    border-radius: 50%;
+    
+    transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+}
+
+.story-arrow:hover:not(:disabled) {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    background-color: #fff5f6;
+}
+
+.story-arrow:disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+
+.story-arrow:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+}
+
+.story-counter {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04rem;
+    text-align: right;
+    
+    min-width: 3rem;
+    
+    color: var(--color-text-muted);
+}
+
+/* ================================================ */
+/* RESPONSIVE                                       */
+/* ================================================ */
+@media screen and (max-width: 1024px) {
+    .story-slide {
+        gap: 2.5rem;
+
+        padding: 0 0 0 2.25rem;
+    }
+
+    .story-track {
+        min-height: 390px;
+    }
+
+    .story-slide__img {
+        height: 360px;
+    }
+
+    .story-slide__eyebrow {
+        font-size: 0.725rem;
+    }
+
+    .story-slide__title {
+        font-size: 2rem;
+    }
+
+    .story-slide__body {
+        font-size: 0.925rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .story-section__header {
+        margin-bottom: 2.75rem;
+    }
+
+    .story-slide {
+        padding: 0 0 0 2rem;
+    }
+
+    .story-track {
+        min-height: 360px;
+    }
+
+    .story-slide__img {
+        height: 330px;
+    }
+
+    .story-slide__eyebrow {
+        font-size: 0.7rem;
+    }
+
+    .story-slide__title {
+        font-size: 1.75rem;
+    }
+
+    .story-slide__body {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .story-nav {
+        display: none;
+    }
+
+    .story-slide {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        min-height: unset;
+
+        padding: 0;
+    }
+
+    .story-slide--reverse .story-slide__img,
+    .story-slide--reverse .story-slide__text {
+        order: unset;
+    }
+
+    .story-slide__text {
+        max-width: 100%;
+        margin: 0 !important;
+    }
+
+    .story-progress {
+        max-width: 200px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .story-track {
+        min-height: 330px;
+    }
+
+    .story-slide__img {
+        height: 300px;
+    }
+
+    .story-slide__eyebrow {
+        font-size: 0.675rem;
+    }
+
+    .story-slide__title {
+        font-size: 1.5rem;
+    }
+
+    .story-slide__body {
+        font-size: 0.875rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .story-track {
+        min-height: 300px;
+    }
+
+    .story-slide__img {
+        height: 270px;
+    }
+
+    .story-slide__eyebrow {
+        font-size: 0.65rem;
+    }
+
+    .story-slide__body {
+        font-size: 0.85rem;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .story-counter {
+        display: none;
+    }
+}

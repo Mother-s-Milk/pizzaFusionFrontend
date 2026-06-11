@@ -1,0 +1,133 @@
+/* ===================== */
+/* SIDEBAR DE FILTROS     */
+/* ===================== */
+.menu-filters {
+    position: sticky;
+    top: var(--menu-sidebar-top);
+
+    overflow: hidden;
+
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-card-border);
+    border-radius: 0.625rem;
+    box-shadow: var(--color-card-shadow);
+
+    padding: 1rem;
+}
+
+.menu-filters-title {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.04rem;
+    text-transform: uppercase;
+
+    color: var(--color-text-muted);
+
+    margin-bottom: 1rem;
+}
+
+.menu-filters>ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3125rem;
+}
+
+.menu-filter-btn {
+    font-size: 0.825rem;
+    text-align: left;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    background: transparent;
+    color: var(--color-text-subtitle);
+    border: 1px solid transparent;
+    border-radius: 0.3125rem;
+
+    padding: 0.5rem 0.625rem;
+
+    transition:
+        background-color 0.15s ease,
+        color 0.15s ease,
+        border-color 0.15s ease;
+}
+
+.menu-filter-btn:hover {
+    background: var(--btn-ghost-hover-bg);
+    color: var(--color-text-primary);
+    border-color: var(--color-border);
+}
+
+.menu-filter-btn.active {
+    font-weight: 700;
+
+    background: var(--menu-filter-active-bg);
+    color: var(--menu-filter-active-text);
+    border-color: transparent;
+}
+
+.menu-filter-btn:focus-visible {
+    outline: 2px solid var(--color-accent-light);
+    outline-offset: 2px;
+}
+
+.filter-btn-icon {
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+
+.filter-btn-label {
+    flex: 1;
+}
+
+.filter-btn-count {
+    font-size: 0.65rem;
+    font-weight: 700;
+
+    background: rgba(29, 53, 87, 0.08);
+    color: var(--color-text-muted);
+    border-radius: 999px;
+
+    padding: 0.25rem 0.5rem;
+
+    transition: background 0.15s, color 0.15s;
+}
+
+.menu-filter-btn.active .filter-btn-count {
+    background: rgba(255, 255, 255, 0.22);
+    color: #ffffff;
+}
+
+/* DIVIDER */
+.menu-filters-divider {
+    height: 1px;
+
+    background: var(--color-border);
+
+    margin: 0.625rem 0;
+}
+
+.menu-filters-info {
+    font-size: 0.725rem;
+    line-height: 1.7;
+
+    background: var(--color-section-alt);
+    color: var(--color-text-muted);
+    border-radius: 0.3125rem;
+
+    padding: 0.625rem;
+}
+
+.menu-filters-info strong {
+    color: var(--color-text-primary);
+}
+
+/* MOBILE */
+@media screen and (max-width: 900px) {
+    .menu-filters {
+        display: none;
+    }
+}

@@ -1,0 +1,648 @@
+/*******/
+/*******/
+/*Carro*/
+/*******/
+/*******/
+.table-cart {
+    width: 100%;
+    box-shadow: 0 0px 3px rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    text-align: center;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+.table-cart thead,
+.table-cart tbody tr {
+    border-bottom: 1px solid #ccc;
+}
+
+.table-cart th,
+.table-cart td {
+    padding: 7.5px; /*9px*/
+    font-size: /*1.125rem*/18px;
+}
+
+.table-cart tbody tr:hover {
+    background-color: #D6EEEE;
+}
+
+.table-cart img {
+    max-width: 120px;
+    display: block;
+    border-radius: 6px;
+    margin: auto;
+}
+
+.agregar-borrar {
+    vertical-align: middle;
+    align-content: center;
+    align-self: center;
+    height: 100%;
+}
+
+.agregar-borrar .plus-minus:last-of-type {
+    border-radius: 0 6px 6px 0;
+}
+
+.plus-minus {
+    padding: 3px 6px;
+    background-color: #000;
+    color: #ffffff;
+    font-size: 18px;
+    border: none;
+    border-radius: 6px 0 0 6px;
+    cursor: pointer;
+    /*transition: transform 0.3s ease;*/
+}
+
+.cart-cantidad {
+    padding: 3px 6px; /*15px*/
+    background-color: #ddd;
+    height: 100%;
+    /*border: 1px solid black;*/
+    /*outline: 1px solid black;*/
+    display: inline-block;
+}
+
+.table-cart tfoot th {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+#cart-section-footer {
+    display: none;
+    align-items: center;
+    justify-content: end;
+}
+
+#cart-section-footer button:last-child {
+    margin-left: 0.9375rem;
+}
+
+/*********/
+/*********/
+/*Botones*/
+/*********/
+/*********/
+.btn-reservacion {
+    background-color: #f39c12;
+    padding: 0.5625rem 0.75rem; /*6px/12px*/
+    color: #ffffff;
+    display: block;
+    margin: auto;
+}
+
+.btn-reservacion:hover {
+    background-color: #e67e00;
+}
+
+.btn-trash {
+    background-color: red;
+    color: #ffffff;
+    padding: 3px 6px;
+    border: none;
+    border-radius: 3px;
+    font-size: 21px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-trash:hover {
+    transform: scale(1.03);
+    background-color: #B71C1C;
+}
+
+.btn-realizar-pedido {
+    background-color: green;
+    color: #ffffff;
+    padding: 0.5625rem; /*9px*/
+    font-size: 1rem; /*16px*/
+}
+
+.btn-clear-all {
+    background-color: red;
+    color: #ffffff;
+    padding: 0.5625rem; /*9px*/
+    font-size: 1rem; /*16px*/
+}
+
+.btn-pedir {
+    background-color: green;
+    color: #ffffff;
+    padding: 0.5625rem; /*9px*/
+}
+
+.btn-cancelar {
+    background-color: #333333;
+    color: #ffffff;
+    padding: 0.5625rem; /*9px*/
+}
+
+/**/
+/**/
+/**/
+.text-muted {
+    font-size: 1.125rem; /*18px*/
+    color: #666666;
+    text-align: center;
+    font-weight: 500;
+}
+
+/*************************/
+/*************************/
+/*Modal formulario pedido*/
+/*************************/
+/*************************/
+.modal {
+    display: none;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /*Inicialmente invisible*/
+    transform: scale(0.3); /*Inicialmente más pequeño*/
+    transition: opacity 0.3s ease, transform 0.3s ease; /*Transición suave */
+}
+
+.modal.show {
+    display: flex;
+    opacity: 1; /*Visible*/
+    transform: scale(1); /*Tamaño normal*/
+}
+
+.pedido-modal-content {
+    background-color: #ffffff;
+    padding: 1.875rem; /*30px*/
+    border-radius: 6px;
+    max-width: 28.125rem; /*450px*/
+    width: 100%;
+    text-align: center;
+}
+
+.pedido-modal-content header {
+    margin-bottom: 0.9375rem; /*15px*/
+}
+
+.pedido-modal-content header h2 {
+    font-size: 2.625rem; /*42px*/
+}
+
+.form-pedido div {
+    margin-bottom: 0.9375rem; /*15px*/
+}
+
+.form-pedido div:last-child {
+    margin-bottom: 0;
+    margin-top: 15px;
+}
+
+.form-pedido button {
+    margin: 0 1.125rem; /*18px*/
+}
+
+.form-pedido div input,
+.form-pedido div select,
+.form-pedido div textarea {
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #d3d3d3;
+    padding: 6px;
+    font-size: 1rem; /*16px*/
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form-pedido div input,
+.form-pedido div select {
+    height: 2.0625rem; /*33px*/
+}
+
+.form-pedido div textarea {
+    resize: none;
+    height: 60px;
+}
+
+/*********/
+/*********/
+/*Carrito*/
+/*********/
+/*********/
+.cart-container {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Inicialmente oculto */
+
+    display: flex;
+    flex-direction: column;
+
+    width: 413.8px;
+    max-width: 413.8px;
+    height: 100dvh;
+
+    background-color: #fffff3;
+    box-shadow: 0px 0 3px rgba(0, 0, 0, 0.5);
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+/*Para mostrar el carro*/
+.cart-container.show {
+    right: 0;
+}
+
+.cart-header {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 0.9375rem; /*15px*/
+    padding: 0.9375rem; /*15px*/
+    background-color: #000;
+    box-shadow: 9px 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.btn-close-cart {
+    background-color: transparent;
+    padding: 7.5px;
+}
+
+.btn-close-cart,
+.carrito-header > h1 {
+    font-size: 1.5rem; /*24px*/
+    font-weight: 500;
+    color: #fff;
+}
+
+/*Área principal del carrito (se vuelve scrolleable)*/
+.carrito-main {
+    flex: 1; /* Ocupa el mayor espacio posible */
+    overflow-y: auto;
+    position: relative;
+}
+
+.carrito-section-productos {
+    display: flex;
+    flex-direction: column;
+    gap: 7.5px;
+    padding: 0.9375rem; /*15px*/
+}
+
+.carrito-section-productos.hidden {
+    display: none;
+}
+
+.carrito-section-productos.show {
+    display: flex;
+}
+
+/*********************************/
+/*Seccion de productos de carrito*/
+/*********************************/
+.carrito-container-categoria {
+    display: flex;
+    flex-direction: column;
+    gap: 7.5px;
+}
+
+.carrito-container-categoria > header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.carrito-container-categoria > header hr {
+    flex-grow: 1; /* Hace que los hr ocupen el espacio restante */
+    background-color: rgba(248, 92, 92, .5);
+    border: none;
+    border-radius: 3.75px;
+    height: 1px;
+    margin: 0; /* Elimina márgenes que puedan afectar el diseño */
+}
+
+.carrito-container-categoria > header h1 {
+    text-align: center;
+    font-size: /*0.9375rem*/16px; /*15px*/
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0 0.9375rem; /*15px*/
+}
+
+.carrito-container-categoria > main {
+    display: flex;
+    flex-direction: column;
+    gap: 7.5px;
+}
+
+.mensaje-categoria-carro {
+    text-align: center;
+    font-size: /*0.9375rem*/14px; /*15px*/
+    color: #666;
+    font-weight: 500;
+}
+
+.tarjeta-carrito {
+    display: flex;
+    align-items: start;
+    gap: 0.9375rem; /*15px*/
+
+    padding: 0.9375rem; /*15px*/
+
+    background-color: #fffff3;
+
+    border: 1px solid #e0e0e0;
+    border-radius: 7.5px;
+    box-shadow: 0 0px 3px rgba(0, 0, 0, 0.5);
+    transition: padding .3s ease;
+}
+
+.tarjeta-carrito > div {
+    flex: 1;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    gap: 7.5px;
+}
+
+.tarjeta-carrito > img {
+    width: 75px;
+    border-radius: 3.75px;
+    transition: width .3s ease;
+}
+
+/*Nombre del producto*/
+.info-producto {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+}
+.info-producto p:first-child,
+.info-extra h3 {
+    font-weight: 600;
+    font-size: /*1.125rem*/16px; /*18px*/
+    color: #000;
+}
+.info-producto-nombre {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.info-producto span {
+    font-size: 12px;
+    margin-left: 3px;
+}
+
+/*Precio*/
+.info-producto > p,
+.info-extra p {
+    font-size: /*0.9375rem*/14px; /*15px*/
+    color: #f85c5c;
+    font-weight: 500;
+}
+
+.botones-producto-carrito {
+    display: flex;
+    align-items: center;
+}
+
+.botones-producto-carrito button {
+    padding: 3.75px;
+    width: 1.5rem; /*24px*/
+    height: 1.5rem; /*24px*/
+    background-color: #000;
+    color: #fff;
+    font-size: 0.9375rem; /*15px*/
+    border-radius: 3.75px;
+}
+
+/* Hover para interacción */
+.botones-producto-carrito button:hover {
+    background-color: #f85c5c;
+}
+
+.botones-producto-carrito div {
+    padding: 0 7.5px;
+}
+
+.btn-trash {
+    padding: 7.5px;
+    font-size: 1.125rem; /*18px*/
+    color: #fff;
+    background-color: #D0021B;
+    border-radius: 3.75px;
+}
+
+.btn-trash:hover {
+    background-color: #A00116;
+}
+
+/************************/
+/*Formulario del carrito*/
+/************************/
+.carrito-formulario-section.hidden {
+    display: none;
+}
+
+.carrito-formulario-section.show {
+    display: flex;
+}
+
+.carrito-formulario-section {
+    display: flex;
+    flex-direction: column;
+    gap: 7.5px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0.9375rem; /*15px*/
+}
+  
+.carrito-formulario-section > header h2 {
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #1e293b;
+    text-align: center;
+    font-size: 22px;
+}
+
+.formulario-carrito {
+    display: flex;
+    flex-direction: column;
+    gap: 7.5px;
+}
+  
+.formulario-carrito > div {
+    display: flex;
+    flex-direction: column;
+    gap: 3.75px;
+    position: relative;
+}
+
+.formulario-carrito > div input,
+.formulario-carrito > div select {
+    height: 39px;
+}
+
+.formulario-carrito > div textarea {
+    resize: none;
+    height: 78px;
+}
+
+.formulario-carrito > div input,
+.formulario-carrito > div select,
+.formulario-carrito > div textarea {
+    width: 100%;
+    border-radius: 7.5px;
+    padding: 3.75px 7.5px;
+    font-size: 0.9375rem; /*15px*/
+    background-color: #fff; 
+    border: 1px solid #D1D5DB;
+    transition: all 0.3s ease;
+    font-family: 'Quicksand', Arial, Helvetica, sans-serif;
+}
+
+.formulario-carrito > div input:focus,
+.formulario-carrito > div select:focus,
+.formulario-carrito > div textarea:focus {
+    background-color: #FFFFFF;
+    border-color: #f85c5c;
+    outline: none; /* Elimina el borde predeterminado del navegador */
+    box-shadow: 0 0 6px rgba(248, 92, 92, .5);
+}
+
+/**/
+.error {
+    display: inline-block;
+    color: red;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.error:empty {
+    display: none;
+}
+
+/**********************************/
+/*Footer fijo en la parte inferior*/
+/**********************************/
+.carrito-footer {
+    padding: 0.9375rem; /*15px*/
+    background-color: #eee;
+    border-top: 1px solid #ccc;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    gap: 7.5px;
+}
+
+.carrito-footer.hidden {
+    display: none;
+}
+
+.carrito-footer.show {
+    display: flex;
+}
+
+.carrito-footer > hr {
+    width: 100%;
+    border: none;
+    border-radius: 3.75px;
+    background-color: rgba(248, 92, 92, .5);
+    height: 1px;
+    margin: auto;
+}
+
+.carrito-footer > p {
+    font-size: /*1.125rem*/16px; /*18px*/
+    font-weight: 600;
+}
+
+.carrito-footer > p span {
+    font-weight: 400;
+}
+
+/* Estilos para el botón del footer */
+.footer-carrito-botones {
+    margin: auto;
+    margin-top: 7.5px;
+}
+
+.footer-carrito-botones > div {
+    display: flex;
+    align-items: center;
+    gap: 0.9375rem; /*15px*/
+}
+
+.footer-carrito-botones > div.hidden {
+    display: none;
+}
+
+.footer-carrito-botones button {
+    padding: 7.5px 0.9375rem; /*15px*/
+    color: #fff;
+    border-radius: 1.875rem; /*30px*/
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 1);
+    font-size: 1.125rem; /*18px*/
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow .2s ease, font-size .3s ease, padding .3s ease;
+}
+
+.footer-carrito-botones > div button:first-child {
+    background: #28a745;
+    border: 2px solid #1e7e34;
+}
+
+.footer-carrito-botones > div button:first-child:hover {
+    background: #218838;
+}
+
+.footer-carrito-botones > div button:first-child:active {
+    background-color: #1e7e34;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.footer-carrito-botones > div button:last-child {
+    background: #f85c5c;
+    border: 2px solid #c13535;
+}
+
+.footer-carrito-botones > div button:last-child:hover {
+    background: #dc5353;
+}
+
+.footer-carrito-botones > div button:last-child:active {
+    background-color: #c13535;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 1);
+}
+
+/***************************************/
+/*Opcion si el carro se encuentra vacio*/
+/***************************************/
+.carrito-vacio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.carrito-vacio img {
+    width: 100%;
+    display: block;
+}
+
+.carrito-vacio p {
+    font-size: 21px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+}

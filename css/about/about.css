@@ -1,0 +1,786 @@
+/* ================================================ */
+/* ABOUT.CSS                                        */
+/* Unifica about.css + gallery.css del original.   */
+/* Depende de core.css para variables y utilidades  */
+/* (.section, .section-alt, .section-title,         */
+/*  .section-subtitle, .container, .divider).       */
+/* ================================================ */
+
+/* ================================================ */
+/* 1. HERO                                          */
+/* ================================================ */
+.about-hero {
+    position: relative;
+
+    min-height: 450px;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: flex-end;
+    gap: 2rem;
+
+    /* Imagen de fondo pasada inline desde el HTML   */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    padding: 5rem 2.5rem 3rem;
+}
+
+/* Overlay doble: viñeta + gradiente lateral */
+.about-hero::before {
+    content: '';
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(1200px 600px at 20% 40%, rgba(0, 0, 0, .25), transparent 60%),
+        linear-gradient(90deg,
+            rgba(0, 0, 0, .72) 0%,
+            rgba(0, 0, 0, .45) 55%,
+            rgba(0, 0, 0, .20) 100%);
+    pointer-events: none;
+}
+
+/* Glow de acento en la esquina derecha */
+.about-hero::after {
+    content: '';
+
+    position: absolute;
+    inset: 0;
+
+    background: radial-gradient(ellipse 50% 65% at 80% 55%,
+            rgba(230, 57, 70, 0.3),
+            transparent 60%);
+    pointer-events: none;
+}
+
+.about-hero__content {
+    position: relative;
+
+    z-index: 1;
+}
+
+.about-hero__content .eyebrow {
+    color: var(--color-accent-light);
+}
+
+.about-hero__title {
+    font-size: 3.25rem;
+    font-weight: 900;
+    line-height: 1.4;
+
+    max-width: 600px;
+
+    color: #ffffff;
+    
+    margin-top: 0;
+}
+
+.about-hero__title em {
+    font-style: italic;
+
+    color: var(--color-accent-light);
+}
+
+.about-hero__scroll {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.04rem;
+    text-transform: uppercase;
+
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    
+    color: rgba(255, 255, 255, 0.4);
+
+    padding-bottom: 0.5rem;
+
+    z-index: 1;
+}
+
+.about-hero__scroll-line {
+    width: 1px;
+    height: 3rem;
+
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), transparent);
+}
+
+.about-hero__year {
+    font-family: var(--font-heading);
+    font-size: 7rem;
+    font-weight: 900;
+
+    position: absolute;
+    right: 1rem;
+    bottom: -1rem;
+
+    color: rgba(255, 255, 255, 0.07);
+    pointer-events: none;
+    user-select: none;
+
+    z-index: 1;
+}
+
+
+/* ================================================ */
+/* 2. MANIFIESTO                                    */
+/* ================================================ */
+.about-manifesto {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 3rem;
+
+    background-color: var(--color-accent);
+
+    padding: 4rem 2.5rem;
+}
+
+.about-manifesto__index {
+    font-family: var(--font-heading);
+    font-size: 5rem;
+    font-weight: 900;
+    line-height: 1;
+
+    color: rgba(255, 255, 255, 0.15);
+    user-select: none;
+}
+
+.about-manifesto__text {
+    font-family: var(--font-heading);
+    font-size: 2.1rem;
+    font-weight: 700;
+    font-style: italic;
+    line-height: 1.5;
+
+    max-width: 900px;
+
+    color: #ffffff;
+    border: none;
+    
+    margin: 0;
+
+    padding: 0;
+}
+
+.about-manifesto__text strong {
+    font-style: normal;
+    font-weight: 900;
+
+    background-color: rgba(255, 255, 255, 0.18);
+    border-radius: 0.3125rem;
+
+    padding: 0.1rem 0.2rem;
+}
+
+
+/* ================================================ */
+/* 4. PILARES                                       */
+/* ================================================ */
+.about-pillars__header {
+    margin-bottom: 3rem;
+}
+
+.about-pillars__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.pillar-card {
+    position: relative;
+    overflow: hidden;
+
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-card-border);
+    border-radius: 0.625rem;
+    padding: 1rem 1.5rem;
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pillar-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--color-card-shadow-hover);
+}
+
+/* Stripe de color en el top */
+.pillar-card::before {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 3px;
+
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
+}
+
+.pillar-card--blue::before {
+    background: linear-gradient(90deg, var(--color-text-subtitle), #74b3ce);
+}
+
+.pillar-card--teal::before {
+    background: linear-gradient(90deg, #2a9d8f, #52c9b9);
+}
+
+.pillar-card__index {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 900;
+
+    display: block;
+    
+    color: rgba(29, 53, 87, 0.1);
+
+    margin-bottom: 0.5rem;
+    user-select: none;
+}
+
+.pillar-card__icon {
+    font-size: 1.5rem;
+
+    color: var(--color-accent);
+
+    margin-bottom: 0.5rem;
+}
+
+.pillar-card--blue .pillar-card__icon {
+    color: var(--color-text-subtitle);
+}
+
+.pillar-card--teal .pillar-card__icon {
+    color: #2a9d8f;
+}
+
+.pillar-card__title {
+    font-size: 1.5rem;
+    font-weight: 800;
+
+    color: var(--color-text-primary);
+
+    margin-bottom: 0.625rem;
+}
+
+.pillar-card__desc {
+    font-size: 0.9rem;
+    line-height: 1.7;
+
+    color: var(--color-text-muted);
+}
+
+.pillar-card__stat {
+    display: flex;
+    align-items: baseline;
+    gap: 0.625rem;
+
+    border-top: 1px solid var(--color-border);
+
+    margin-top: 1rem;
+    padding-top: 1rem;
+}
+
+.pillar-card__stat-value {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 900;
+    line-height: 1;
+
+    color: var(--color-accent);
+}
+
+.pillar-card--blue .pillar-card__stat-value {
+    color: var(--color-text-subtitle);
+}
+
+.pillar-card--teal .pillar-card__stat-value {
+    color: #2a9d8f;
+}
+
+.pillar-card__stat-label {
+    font-size: 0.8rem;
+    line-height: 1.4;
+
+    color: var(--color-text-muted);
+}
+
+
+/* ================================================ */
+/* 5. EQUIPO                                        */
+/* ================================================ */
+.about-team {
+    background-color: var(--color-text-primary);
+}
+
+.about-team__title {
+    color: #ffffff;
+}
+
+.about-team__subtitle {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.about-team__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+
+    margin-top: 3rem;
+}
+
+.team-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Imagen circular — reemplaza clip-path con border-radius */
+.team-card__img-wrapper {
+    width: 200px;
+    height: 200px;
+    
+    overflow: hidden;
+
+    border: 3px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(230, 57, 70, 0.25);
+
+    margin-bottom: 1.25rem;
+
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.team-card:hover .team-card__img-wrapper {
+    transform: translateY(-3px);
+
+    box-shadow: 0 0 0 4px var(--color-accent);
+}
+
+.team-card__img-wrapper img {
+    width: 100%;
+    height: 100%;
+    
+    display: block;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.team-card__body {
+    flex: 1;
+}
+
+.team-card__name {
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    color: #ffffff;
+
+    margin-bottom: 0.5rem;
+}
+
+.team-card__role {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+
+    color: var(--color-accent-light);
+
+    margin-bottom: 0.5rem;
+}
+
+.team-card__desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+
+    color: rgba(255, 255, 255, 0.5);
+}
+
+
+/* ================================================ */
+/* 7. CTA FINAL                                     */
+/* ================================================ */
+.about-cta {
+    text-align: center;
+}
+
+.about-cta__inner {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.about-cta__title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    line-height: 1.2;
+
+    color: var(--color-text-primary);
+
+    margin-bottom: 1rem;
+}
+
+.about-cta__title em {
+    font-style: italic;
+
+    color: var(--color-accent);
+}
+
+.about-cta__sub {
+    font-size: 0.95rem;
+    line-height: 1.7;
+
+    color: var(--color-text-subtitle);
+
+    margin-bottom: 2.5rem;
+}
+
+.about-cta__actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.about-cta__btn {
+    font-size: 0.85rem;
+    font-weight: 500;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid transparent;
+    border-radius: 0.3125rem;
+
+    padding: 0.625rem 1.5rem;
+
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.about-cta__btn:active {
+    transform: translateY(1px);
+}
+
+.about-cta__btn--primary {
+    background-color: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+}
+
+.about-cta__btn--primary:hover {
+    background-color: var(--btn-primary-bg-hover);
+    transform: translateY(-2px);
+}
+
+.about-cta__btn--ghost {
+    background-color: var(--btn-ghost-bg);
+    color: var(--btn-ghost-text);
+    border-color: var(--btn-ghost-border);
+}
+
+.about-cta__btn--ghost:hover {
+    background-color: var(--btn-ghost-hover-bg);
+    transform: translateY(-2px);
+}
+
+
+/* ================================================ */
+/* RESPONSIVE                                       */
+/* ================================================ */
+
+/* ── 1024px ── */
+@media screen and (max-width: 1024px) {
+    .about-hero {
+        min-height: 420px;
+
+        padding: 4.75rem 2.25rem 2.75rem;
+    }
+
+    .about-hero__title {
+        font-size: 3rem;
+    }
+
+    .about-hero__scroll {
+        font-size: 0.625rem;
+    }
+
+    .about-hero__year {
+        font-size: 6.5rem;
+    }
+
+    .about-manifesto {
+        padding: 3.75rem 2.25rem;
+    }
+
+    .about-manifesto__index {
+        font-size: 4.75rem;
+    }
+
+    .about-manifesto__text {
+        font-size: 2rem;
+    }
+
+    .pillar-card__index {
+        font-size: 2.75rem;
+    }
+
+    .pillar-card__icon {
+        font-size: 1.25rem;
+    }
+
+    .pillar-card__title {
+        font-size: 1.25rem;
+    }
+
+    .pillar-card__desc {
+        font-size: 0.875rem;
+    }
+
+    .pillar-card__stat-value {
+        font-size: 1.7rem;
+    }
+
+    .pillar-card__stat-label {
+        font-size: 0.775rem;
+    }
+
+    .team-card__name {
+        font-size: 1.4rem;
+    }
+
+    .team-card__role {
+        font-size: 0.725rem;
+    }
+
+    .team-card__desc {
+        font-size: 0.875rem;
+    }
+}
+
+/* ── 900px ── */
+@media screen and (max-width: 900px) {
+    .about-hero {
+        padding: 4.5rem 2rem 2.5rem;
+    }
+
+    .about-hero__title {
+        font-size: 2.75rem;
+    }
+
+    .about-hero__scroll {
+        font-size: 0.6rem;
+    }
+
+    .about-hero__year {
+        font-size: 6.25rem;
+    }
+
+    .about-manifesto {
+        padding: 3.5rem 2rem;
+    }
+
+    .about-manifesto__index {
+        font-size: 4.5rem;
+    }
+
+    .about-manifesto__text {
+        font-size: 1.9rem;
+    }
+
+    .about-pillars__grid {
+        grid-template-columns: 1fr 1fr;
+        
+        margin: 0 auto;
+    }
+
+    .about-team__grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        margin-top: 2.5rem;
+    }
+
+    .team-card__img-wrapper {
+        width: 190px;
+        height: 190px;
+    }
+}
+
+/* ── 768px ── */
+@media screen and (max-width: 768px) {
+    .about-hero {
+        min-height: 390px;
+
+        grid-template-columns: 1fr;
+
+        padding: 4.25rem 1.75rem 2.25rem;
+    }
+
+    .about-hero__title {
+        font-size: 2.5rem;
+    }
+
+    .about-hero__scroll {
+        font-size: 0.575rem;
+    }
+
+    .about-hero__year {
+        display: none;
+    }
+
+    .about-hero__scroll {
+        display: none;
+    }
+
+    .about-manifesto {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+
+        padding: 3.25rem 1.75rem;
+    }
+
+    .about-manifesto__index {
+        font-size: 4.25rem;
+    }
+
+    .about-manifesto__text {
+        font-size: 1.8rem;
+    }
+
+    .pillar-card__index {
+        font-size: 2.5rem;
+    }
+
+    .pillar-card__desc {
+        font-size: 0.85rem;
+    }
+
+    .pillar-card__stat-value {
+        font-size: 1.6rem;
+    }
+
+    .pillar-card__stat-label {
+        font-size: 0.75rem;
+    }
+
+    /* Reset de orden en mobile: imagen siempre arriba */
+    /*.about-team__grid {
+        grid-template-columns: 1fr 1fr;
+    }*/
+}
+
+/* ── 600px ── */
+@media screen and (max-width: 600px) {
+    .about-hero {
+        padding: 4rem 1.5rem 2rem;
+    }
+
+    .about-hero__title {
+        font-size: 2.25rem;
+    }
+
+    .about-hero__scroll {
+        font-size: 0.55rem;
+    }
+
+    .about-hero__year {
+        font-size: 5.75rem;
+    }
+
+    .about-manifesto {
+        padding: 3rem 1.5rem;
+    }
+
+    .about-manifesto__index {
+        font-size: 4rem;
+    }
+
+    .about-manifesto__text {
+        font-size: 1.7rem;
+    }
+
+    .about-pillars__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ── 480px ── */
+@media screen and (max-width: 480px) {
+    .about-hero {
+        min-height: 360px;
+
+        padding: 3.75rem 1.25rem 1.75rem;
+    }
+
+    .about-hero__title {
+        font-size: 2rem;
+    }
+
+    .about-hero__scroll {
+        font-size: 0.525rem;
+    }
+
+    .about-hero__year {
+        font-size: 5.5rem;
+    }
+
+    .about-manifesto {
+        padding: 2.75rem 1.25rem;
+    }
+
+    .about-manifesto__index {
+        font-size: 3.75rem;
+    }
+
+    .about-manifesto__text {
+        font-size: 1.6rem;
+    }
+
+    .about-team__grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+
+        margin-top: 2rem;
+    }
+
+    .team-card__img-wrapper {
+        width: 180px;
+        height: 180px;
+    }
+
+    .about-cta__actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .about-hero {
+        min-height: 330px;
+
+        align-items: center;
+    }
+
+    .about-hero__content {
+        text-align: center;
+    }
+
+    .about-manifesto {
+        padding: 2.5rem 1rem;
+    }
+
+    .about-manifesto__index {
+        font-size: 3.5rem;
+    }
+
+    .about-manifesto__text {
+        font-size: 1.5rem;
+    }
+}

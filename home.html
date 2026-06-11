@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Bienvenido a Pizza Fusión!</title>
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="css/core.css">
+    <link rel="stylesheet" href="css/top-header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/home/hero.css">
+    <link rel="stylesheet" href="css/home/promotions.css">
+    <link rel="stylesheet" href="css/home/pizzaStyles.css">
+    <link rel="stylesheet" href="css/home/contactHome.css">
+    <link rel="stylesheet" href="css/home/gallery.css">
+
+    <!-- SCRIPTS -->
+    <script defer type="text/javascript" src="js/includes/includes.js"></script>
+    <script defer type="text/javascript" src="js/includes/revealAnimation.js"></script>
+    <script defer type="module" src="js/promotion/promotion.js"></script>
+    <script defer type="module" src="js/pizzaStyles/pizzaStyles.js"></script>
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header class="top-header">
+        <div class="top-header-inner container">
+            <div class="top-header-inner-left">
+                <button type="button" class="menu-toggle-btn" id="menu-toggle-btn" aria-controls="mobile-nav"
+                    aria-label="Abrir menú de navegación" aria-expanded="false">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <a href="home.html" class="logo" title="Ir al inicio" aria-label="PF - Ir al inicio">
+                    <span aria-hidden="true">
+                        <span>Pizza</span><span>Fusión</span>
+                    </span>
+                </a>
+
+                <nav class="desktop-nav" id="desktop-nav" aria-label="Menú principal">
+                    <ul class="desktop-nav-list">
+                        <li><a href="home.html" class="desktop-nav-link" title="Ir al inicio">Inicio</a></li>
+
+                        <li class="dropdown">
+                            <a href="views/menu.html" class="desktop-nav-link dropdown-toggle"
+                                title="Explora nuestro menú">Nuestra carta <i class="fa-solid fa-caret-down"></i></a>
+                            <ul class="dropdown-list">
+                                <li><a href="views/menu.html">Carta completa</a></li>
+                                <li><a href="home.html#promotions">Promociones</a></li>
+                                <li><a href="home.html#styles">Nuestros estilos</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="views/about.html" class="desktop-nav-link" title="Conoce nuestra historia">Sobre
+                                Nosotros</a></li>
+
+                        <li><a href="views/contact.html" class="desktop-nav-link" title="Contáctanos">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="cart-wrapper">
+                <a href="views/carrito.html" class="cart-link" id="btn-cart"
+                    aria-label="Carrito de compras (0 productos)">
+                    <i class="fa-solid fa-shopping-cart" aria-hidden="true"></i>
+                </a>
+                <span id="cart-count" aria-hidden="true">0</span>
+            </div>
+        </div>
+
+        <nav class="mobile-nav" id="mobile-nav" aria-label="Menú móvil" aria-hidden="true">
+            <ul class="mobile-nav-list">
+                <li><a href="home.html" class="mobile-nav-link">Inicio</a></li>
+                <li><a href="views/menu.html" class="mobile-nav-link">Menú</a></li>
+                <li><a href="home.html#promotions" class="mobile-nav-link">Promociones</a></li>
+                <li><a href="home.html#styles" class="mobile-nav-link">Estilos</a></li>
+                <li><a href="views/about.html" class="mobile-nav-link">Sobre Nosotros</a></li>
+                <li><a href="views/contact.html" class="mobile-nav-link">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h2 class="hero-title">
+                    ¡Bienvenido a </br>
+                    <span>Pizza</span><span>Fusión</span>!
+                </h2>
+
+                <p class="hero-subtitle">
+                    ¡Descubrí nuestras pizzas artesanales y las ofertas exclusivas que tenemos para vos!
+                </p>
+
+                <div class="hero-actions">
+                    <a href="views/menu.html" class="cta-hero-menu" id="cta-hero-menu" title="Explora nuestro menú">
+                        Ver menú
+                    </a>
+
+                    <a href="#" class="cta-hero-order" id="cta-hero-order" title="Realiza tu pedido ya mismo">
+                        Pedir ahora
+                    </a>
+                </div>
+
+                <ul class="hero-meta">
+                    <li>
+                        <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                        <span>+54 383 4456789</span>
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                        <span>Av. Siempre Viva 742</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="container section">
+            <header class="section-header">
+                <h2 class="section-title">Conocé Pizza Fusión</h2>
+            </header>
+            <div class="section-subtitle prose">
+                <p class="reveal">
+                    En <strong>PizzaFusión</strong>, nos especializamos en pizzas artesanales, elaboradas con
+                    ingredientes frescos y locales. Nuestra masa fermentada lentamente y cocida a la perfección en horno
+                    de leña brinda un sabor inigualable. Ya sea que prefieras los clásicos o te aventures con nuestras
+                    recetas exclusivas, aquí encontrarás una experiencia que no querrás perderte.
+                </p>
+                <p class="reveal">
+                    ¡Visítanos en nuestro local o realiza tu pedido online y disfruta de nuestras ofertas
+                    exclusivas!
+                </p>
+            </div>
+        </section>
+
+        <!-- <div class="divider-container">
+            <hr class="divider">
+        </div> -->
+
+        <section class="container section section-alt" id="promotions">
+            <header class="section-header">
+                <h2 class="section-title">
+                    Promociones para vos
+                </h2>
+
+                <p class="section-subtitle">
+                    Aprovechá nuestras mejores ofertas por tiempo limitado.
+                </p>
+            </header>
+
+            <div class="promotions-grid" id="promotions-grid" aria-live="polite"></div>
+
+            <div class="promotions-more">
+                <button id="load-more-promotions" class="promotion-btn">
+                    Ver más promociones
+                </button>
+            </div>
+        </section>
+
+        <!-- <div class="divider-container">
+            <hr class="divider">
+        </div> -->
+
+        <section class="container section" id="styles">
+            <header class="section-header">
+                <h2 class="section-title">Nuestros Estilos </h2>
+                <p class="section-subtitle">
+                    Explorá categorías pensadas para cada antojo.
+                </p>
+            </header>
+
+            <div class="styles-container" id="styles-container"></div>
+
+            <footer class="styles-section-footer">
+                <p>
+                    Todas nuestras pizzas están hechas con los ingredientes más frescos.
+                    ¡Convertí cualquier pizza en <strong>sin gluten</strong> con nuestra masa GF!
+                    También hacemos pizzas <strong>veganas</strong> con alternativas sin lácteos.
+                </p>
+
+                <a href="views/menu.html" class="styles-btn" id="styles-btn" title="Explora nuestro menú">
+                    Ver todas
+                </a>
+            </footer>
+        </section>
+
+        <!-- ======================================= -->
+        <!-- 6. GALERÍA                              -->
+        <!--    Tu grid, con hover refinado          -->
+        <!-- ======================================= -->
+        <section class="about-gallery section section-alt" aria-labelledby="gallery-title">
+            <div class="container">
+                <header class="section-header">
+                    <p class="eyebrow">El local en fotos</p>
+                    <h2 class="section-title" id="gallery-title">Momentos que saben a pizza</h2>
+                    <p class="section-subtitle">Compartimos más que pizzas: momentos para recordar.</p>
+                </header>
+
+                <div class="gallery-grid" role="list" aria-label="Galería de fotos">
+                    <div class="gallery-item reveal" role="listitem">
+                        <img src="img/gallery/galeria1.avif" alt="Ambiente del local de Pizza Fusión" loading="lazy">
+                    </div>
+                    <div class="gallery-item reveal" role="listitem">
+                        <img src="img/gallery/galeria2.avif" alt="Pizza artesanal recién salida del horno"
+                            loading="lazy">
+                    </div>
+                    <div class="gallery-item reveal" role="listitem">
+                        <img src="img/gallery/galeria3.avif" alt="Ingredientes frescos del día" loading="lazy">
+                    </div>
+                    <div class="gallery-item reveal" role="listitem">
+                        <img src="img/gallery/galeria4.avif" alt="Nuestro equipo trabajando" loading="lazy">
+                    </div>
+                    <div class="gallery-item reveal" role="listitem">
+                        <img src="img/gallery/galeria5.avif" alt="Detalle del horno de leña" loading="lazy">
+                    </div>
+                    <div class="gallery-item reveal" role="listitem">
+                        <img src="img/gallery/galeria6.avif" alt="Clientes disfrutando en el local" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- <div class="divider-container">
+            <hr class="divider">
+        </div>
+
+        <section class="container section" id="contact">
+            <header class="section-header">
+                <h2 class="section-title">¿Dónde estamos?</h2>
+
+                <p class="section-subtitle">
+                    Visitanos en nuestro local o comunicate con nosotros para pedidos y
+                    consultas.
+                </p>
+            </header>
+
+            <div class="contact-container">
+                <div class="contact-info">
+                    <ul class="contact-list">
+                        <li class="contact-list-item">
+                            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                            <a href="tel:+543834456789" class="contact-link">+54 383 4456789</a>
+                        </li>
+
+                        <li class="contact-list-item">
+                            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                            <a href="https://maps.google.com/?q=Av.%20Siempre%20Viva%20742" class="contact-link"
+                                target="_blank" rel="noopener">
+                                Av. Siempre Viva 742
+                            </a>
+                        </li>
+
+                        <li class="contact-list-item">
+                            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                            <a href="mailto:pizzafusioncontacto@gmail.com"
+                                class="contact-link">pizzafusioncontacto@gmail.com</a>
+                        </li>
+
+                        <li class="contact-list-item contact-list-item-hours">
+                            <i class="fa-solid fa-clock" aria-hidden="true"></i>
+                            <div class="contact-hours">
+                                <span><strong>Lun-Sáb:</strong> 11:00-15:00 / 20:00-02:00</span>
+                                <span><strong>Dom:</strong> 20:00-02:00</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="map-container">
+                    <iframe title="Mapa - Pizza Fusión"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3272.002125362171!2d-56.13940532504875!3d-34.906396173544955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959f8192b93a31fb%3A0xf4d36a7bf33d3bde!2sDomino%E2%80%99s%20Pizza!5e0!3m2!1ses!2sar!4v1726384369099!5m2!1ses!2sar"
+                        width="600" height="360" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </section> -->
+    </main>
+
+    <footer class="main-footer">
+        <div class="container main-footer-content">
+            <div class="main-footer-inner">
+                <div class="main-footer-inner-top">
+                    <div class="main-footer-branding">
+                        <a href="home.html" class="footer-logo" aria-label="PizzaFusión - Inicio">
+                            <span class="footer-logo-icon">🍕</span>
+                            <span class="footer-logo-text">PizzaFusión</span>
+                        </a>
+
+                        <div class="footer-actions">
+                            <a class="footer-action-btn action-btn-primary" href="#promotions">
+                                Ver promos
+                            </a>
+                            <a class="footer-action-btn action-btn-ghost" href="views/menu.html">
+                                Ir al menú
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="main-footer-newsletter">
+                        <h3>Newsletter</h3>
+                        <div class="newsletterr-email-container">
+                            <input type="email" name="email-input" id="email-input"
+                                placeholder="Ingresa tu correo electrónico" required />
+                            <button type="button" id="btn-newsletter" aria-label="Suscribirse al newsletter"><i
+                                    class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                        <p>Recibí promociones exclusivas y códigos de descuento</p>
+                    </div>
+                </div>
+
+                <div class="main-footer-inner-bottom">
+                    <div class="main-footer-hours">
+                        <h3 class="footer-title">Horarios</h3>
+                        <ul class="hours-list">
+                            <li>
+                                <span>Lun-Sáb (día):</span> 11:00–15:00
+                            </li>
+                            <li>
+                                <span>Lun-Sáb (noche):</span> 20:00–02:00
+                            </li>
+                            <li>
+                                <span>Dom:</span> 20:00–02:00
+                            </li>
+                        </ul>
+                    </div>
+
+                    <nav class="main-footer-nav">
+                        <h3 class="footer-title">Navegación</h3>
+                        <ul class="nav-footer-links">
+                            <li>
+                                <a href="home.html" title="Ir al inicio">Inicio</a>
+                            </li>
+                            <li>
+                                <a href="menu.html" title="Explora nuestro menú">Menú</a>
+                            </li>
+                            <li>
+                                <a href="#promotions" title="Conoce nuestras promociones">Promociones</a>
+                            </li>
+                            <li>
+                                <a href="#styles" title="Conoce nuestra variedad de estilos">Estilos de pizza</a>
+                            </li>
+                            <li>
+                                <a href="about.html">Sobre nosotros</a>
+                            </li>
+                            <li>
+                                <a href="#contact" title="Contáctanos">Contacto</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <div class="pf-footer__col">
+                        <h3 class="footer-title">Contacto</h3>
+
+                        <ul class="nav-footer-links">
+                            <li>
+                                <a href="tel:+543834456789">+54 383 4456789</a>
+                            </li>
+                            <li>
+                                <a href="mailto:pizzafusioncontacto@gmail.com">pizzafusioncontacto@gmail.com</a>
+                            </li>
+                            <li>
+                                <a href="https://maps.google.com/?q=Av.%20Siempre%20Viva%20742" target="_blank"
+                                    rel="noopener">Av. Siempre Viva 742</a>
+                            </li>
+                        </ul>
+
+                        <div class="pf-footer__social" aria-label="Redes sociales">
+                            <a href="#" class="pf-iconBtn" aria-label="Facebook">
+                                <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                            </a>
+
+                            <a href="#" class="pf-iconBtn" aria-label="Instagram">
+                                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                            </a>
+
+                            <a href="https://wa.me/543834456789" class="pf-iconBtn" aria-label="WhatsApp"
+                                target="_blank" rel="noopener">
+                                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                            </a>
+
+                            <a href="#" class="pf-iconBtn" aria-label="TikTok">
+                                <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="footer-divider">
+
+            <div class="final-page">
+                <div class="copy">
+                    <p>
+                        Copyright © 2024 PizzaFusión
+                    </p>
+                </div>
+
+                <div class="design">
+                    <p>
+                        Diseñado y desarrollado por <a href="https://mother-s-milk.github.io/Portfolio-FrancoD.Vera/"
+                            target="_blank">Franco Vera</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
