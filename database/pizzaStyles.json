@@ -5,7 +5,7 @@
             "slug": "clasica",
             "title": "Clásicas",
             "subtitle": "Tradición & muzza",
-            "imgUrl": "../img/styles/clasica.avif",
+            "imgUrl": "img/styles/clasica.avif",
             "badge": "Más elegidas",
             "active": true
         },
@@ -14,7 +14,7 @@
             "slug": "carnivora",
             "title": "Carnívoras",
             "subtitle": "Potentes y cargadas",
-            "imgUrl": "../img/styles/carnivora.avif",
+            "imgUrl": "img/styles/carnivora.avif",
             "badge": null,
             "active": true
         },
@@ -23,7 +23,7 @@
             "slug": "gourmet",
             "title": "Gourmet",
             "subtitle": "Ingredientes premium",
-            "imgUrl": "../img/styles/gourmet.avif",
+            "imgUrl": "img/styles/gourmet.avif",
             "badge": null,
             "active": true
         },
@@ -32,7 +32,7 @@
             "slug": "blanca",
             "title": "Blancas",
             "subtitle": "Cremosas y suaves",
-            "imgUrl": "../img/styles/blanca.avif",
+            "imgUrl": "img/styles/blanca.avif",
             "badge": null,
             "active": true
         },
@@ -41,7 +41,7 @@
             "slug": "veggie",
             "title": "Veggie",
             "subtitle": "Frescas & vegetales",
-            "imgUrl": "../img/styles/veggie.avif",
+            "imgUrl": "img/styles/veggie.avif",
             "badge": null,
             "active": true
         }

@@ -1,6 +1,13 @@
 export const service = {
     getStyles: () => {
-        const url = `${window.location.origin}/database/pizzaStyles.json`;
+        const isGithubPages =
+            window.location.hostname === "mother-s-milk.github.io";
+
+        const BASE_PATH = isGithubPages
+            ? "/pizzaFusionFrontend"
+            : "";
+
+        const url = `${window.location.origin}${BASE_PATH}/database/pizzaStyles.json`;
         return fetch(url, {
             method: "GET",
             headers: {

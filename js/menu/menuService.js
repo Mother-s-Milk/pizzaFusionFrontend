@@ -1,6 +1,13 @@
 export const menuService = {
     getMenu: () => {
-        const url = `${window.location.origin}/database/menu.json`;
+        const isGithubPages =
+            window.location.hostname === "mother-s-milk.github.io";
+
+        const BASE_PATH = isGithubPages
+            ? "/pizzaFusionFrontend"
+            : "";
+            
+        const url = `${window.location.origin}${BASE_PATH}/database/menu.json`;
         return fetch(url, {
             method: "GET",
             headers: {
