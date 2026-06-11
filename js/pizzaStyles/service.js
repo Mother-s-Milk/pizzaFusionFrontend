@@ -1,13 +1,8 @@
+import { buildPath } from "../utils/paths.js";
+
 export const service = {
     getStyles: () => {
-        const isGithubPages =
-            window.location.hostname === "mother-s-milk.github.io";
-
-        const BASE_PATH = isGithubPages
-            ? "/pizzaFusionFrontend"
-            : "";
-
-        const url = `${window.location.origin}${BASE_PATH}/database/pizzaStyles.json`;
+        const url = buildPath("database/pizzaStyles.json");
         return fetch(url, {
             method: "GET",
             headers: {

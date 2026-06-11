@@ -1,4 +1,5 @@
 import { menuService } from './menuService.js';
+import { buildPath } from "../utils/paths.js";
 
 export const menuController = {
     allPizzas: [],         // copia completa del JSON
@@ -164,11 +165,13 @@ export const menuController = {
                 .map(i => `<li class="chip">${i}</li>`)
                 .join('');
 
+            const imageUrl = buildPath(pizza.imgUrl);
+
             const card = `
                 <article class="menu-card" data-id="${pizza.id}">
                     <header class="card-media">
                         <img
-                            src="../../${pizza.imgUrl}"
+                            src="${imageUrl}"
                             class="card-img"
                             alt="Foto de ${pizza.name}"
                             loading="lazy"

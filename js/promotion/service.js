@@ -1,13 +1,9 @@
+import { buildPath } from "../utils/paths.js";
+
 export const service = {
     getPromotions: () => {
-        const isGithubPages =
-            window.location.hostname === "mother-s-milk.github.io";
+        const url = buildPath("database/promotions.json");
 
-        const BASE_PATH = isGithubPages
-            ? "/pizzaFusionFrontend"
-            : "";
-
-        const url = `${window.location.origin}${BASE_PATH}/database/promotions.json`;
         return fetch(url, {
             method: "GET",
             headers: {
