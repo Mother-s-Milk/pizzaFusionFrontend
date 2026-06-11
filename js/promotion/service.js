@@ -1,7 +1,7 @@
 export const service = {
     getPromotions: () => {
         //return fetch("../database/promotions.json", {
-        return fetch("database/promotions.json", {
+        return fetch("https://github.com/Mother-s-Milk/pizzaFusionFrontend/blob/main/database/promotions.json", {
             method: "GET",
             headers: {
               "Content-Type": "application/json",
