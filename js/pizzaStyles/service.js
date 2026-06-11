@@ -1,6 +1,7 @@
 export const service = {
     getStyles: () => {
-        return fetch("../database/pizzaStyles.json", {
+        const url = `${window.location.origin}/database/pizzaStyles.json`;
+        return fetch(url, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

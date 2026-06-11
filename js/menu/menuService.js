@@ -1,6 +1,7 @@
 export const menuService = {
     getMenu: () => {
-        return fetch("../database/menu.json", {
+        const url = `${window.location.origin}/database/menu.json`;
+        return fetch(url, {
             method: "GET",
             headers: {
               "Content-Type": "application/json",

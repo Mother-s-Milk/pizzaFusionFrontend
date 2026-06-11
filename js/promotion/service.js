@@ -1,6 +1,6 @@
 export const service = {
     getPromotions: () => {
-        const url = `${window.location.origin}/pizzaFusionFrontend/database/promotions.json`;
+        const url = `${window.location.origin}/database/promotions.json`;
         return fetch(url, {
             method: "GET",
             headers: {
