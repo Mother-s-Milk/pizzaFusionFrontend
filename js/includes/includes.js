@@ -2,8 +2,9 @@ let isMobile = false;
 
 document.addEventListener('DOMContentLoaded', () => {
     isMobile = window.innerWidth <= 768;
-    
     console.log("Es mobile:", isMobile);
+
+    console.log(window.location)
     
     /***************/
     /* MOBILE MENU */
